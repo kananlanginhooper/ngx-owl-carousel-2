@@ -6,7 +6,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "ngx-owl-carousel2": {
+        "ngx-owl-carousel-2": {
             "projectType": "library",
             "root": "projects/ngx-owl-carousel2",
             "sourceRoot": "projects/ngx-owl-carousel2/src",
@@ -43,5 +43,5 @@
             }
         }
     },
-    "defaultProject": "ngx-owl-carousel2"
+    "defaultProject": "ngx-owl-carousel-2"
 }

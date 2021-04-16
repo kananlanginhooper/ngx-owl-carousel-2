@@ -1,6 +1,18 @@
 {
-    "name": "ngx-owl-carousel2",
-    "version": "0.0.1",
+    "name": "ngx-owl-carousel-2",
+    "description": "An angular 11+ wrapper for jquery owl carousel 2 library with dynamic carousel item change detection",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/kananlanginhooper/ngx-owl-carousel-2"
+    },
+    "keywords": [
+        "angular 11 owl carousel"
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/kananlanginhooper/ngx-owl-carousel-2/issues"
+    },
+    "version": "6.0.2",
     "peerDependencies": {
         "@angular/common": "^11.2.10",
         "@angular/core": "^11.2.10"

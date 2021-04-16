@@ -3,7 +3,7 @@
     "compileOnSave": false,
     "compilerOptions": {
         "baseUrl": "./",
-        "outDir": "./dist/out-tsc",
+        "outDir": "./dist/ngx-owl-carousel-2",
         "forceConsistentCasingInFileNames": true,
         "strictPropertyInitialization": false,
         "strict": true,
@@ -13,7 +13,7 @@
         "declaration": false,
         "downlevelIteration": true,
         "paths": {
-            "ngx-owl-carousel2": ["dist/ngx-owl-carousel2/ngx-owl-carousel2", "dist/ngx-owl-carousel2"]
+            "ngx-owl-carousel2": ["dist/ngx-owl-carousel-2/ngx-owl-carousel-2", "dist/ngx-owl-carousel-2"]
         },
         "experimentalDecorators": true,
         "moduleResolution": "node",
