@@ -1,0 +1,9 @@
+/coverage
+/build
+/dist
+/images
+CHANGELOG.md
+*.yml
+/scully/plugins/*.js
+src/app/shared/constants.js
+src/app/shared/constants.js.map
