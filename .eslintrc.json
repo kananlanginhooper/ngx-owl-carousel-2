@@ -1,6 +1,6 @@
 {
     "root": true,
-    "ignorePatterns": ["projects/**/*"],
+    "ignorePatterns": ["dist/**"],
     "overrides": [
         {
             "files": ["*.ts"],
@@ -14,13 +14,20 @@
                 "plugin:@angular-eslint/template/process-inline-templates"
             ],
             "rules": {
-                "prefer-arrow/prefer-arrow-functions": "off",
+                "prefer-arrow/prefer-arrow-functions": [
+                    "warn",
+                    {
+                        "disallowPrototype": true,
+                        "singleReturnOnly": false,
+                        "classPropertiesAllowed": false
+                    }
+                ],
                 "max-len": [2, { "code": 160 }],
                 "@angular-eslint/component-selector": [
                     "error",
                     {
                         "type": "element",
-                        "prefix": "app",
+                        "prefix": "lib",
                         "style": "kebab-case"
                     }
                 ],
@@ -28,7 +35,7 @@
                     "error",
                     {
                         "type": "attribute",
-                        "prefix": "app",
+                        "prefix": "lib",
                         "style": "camelCase"
                     }
                 ]

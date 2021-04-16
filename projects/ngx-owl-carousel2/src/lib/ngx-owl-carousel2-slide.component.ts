@@ -1,15 +1,18 @@
-import {OnDestroy, Component, Input, ElementRef, HostBinding, OnInit, Output, EventEmitter} from '@angular/core';
+import { OnDestroy, Component, Input, ElementRef, HostBinding, OnInit, AfterViewInit } from '@angular/core';
 
-declare var $: any, jQuery: any;
+declare let $: any;
+declare const jQuery: any;
 @Component({
-    selector: 'owl-carousel-child',
-    template: '<ng-content></ng-content>'
+    selector: 'lib-ngx-owl-carousel2-slide',
+    template: '<ng-content></ng-content>',
 })
-export class OwlChild  implements OnInit, OnDestroy {
+export class NgxOwlCarousel2SlideComponent implements OnInit, OnDestroy, AfterViewInit {
     @HostBinding('class.owl-carousel') owlClass = true;
-    $owl: any;
     @Input() options: any = {};
-    currentSlideIndex: number;
+
+    $owl: any;
+    currentSlideIndex: number | undefined;
+
     constructor(private el: ElementRef) {
         if (typeof $ === 'undefined' && typeof jQuery !== 'undefined') {
             $ = jQuery;
@@ -17,7 +20,7 @@ export class OwlChild  implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        if ((typeof window !== 'undefined') && $ && typeof $.fn.owlCarousel === 'function') {
+        if (typeof window !== 'undefined' && $ && typeof $.fn.owlCarousel === 'function') {
             this.$owl = $(this.el.nativeElement);
         }
     }
@@ -28,7 +31,7 @@ export class OwlChild  implements OnInit, OnDestroy {
 
     initOwl() {
         if (this.$owl) {
-            let options: any = {};
+            const options: any = {};
             Object.assign(options, this.options);
             if (this.currentSlideIndex) {
                 options.startPosition = this.currentSlideIndex;
@@ -52,11 +55,8 @@ export class OwlChild  implements OnInit, OnDestroy {
     }
 
     destroyOwl() {
-        if ( this.$owl) {
-            this.$owl.trigger('destroy.owl.carousel')
-                .removeClass('owl-loaded owl-hidden')
-                .find('.owl-stage:empty, .owl-item:empty')
-                .remove();
+        if (this.$owl) {
+            this.$owl.trigger('destroy.owl.carousel').removeClass('owl-loaded owl-hidden').find('.owl-stage:empty, .owl-item:empty').remove();
         }
     }
 }
