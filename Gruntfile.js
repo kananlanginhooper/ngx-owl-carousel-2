@@ -13,7 +13,7 @@ module.exports = function (grunt) {
         },
         bump: {
             options: {
-                files: ['projects/ngx-owl-carousel2/package.json'],
+                files: ['ngx-owl-carousel-o/package.json'],
                 updateConfigs: [],
                 commit: false,
                 createTag: true,
